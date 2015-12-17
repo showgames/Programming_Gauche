@@ -9,6 +9,9 @@
 		(tree-walk walker proc elt)
 		(proc elt)))
 	  tree))
+;; tree-walkは、フラットなリストに作用する手続きwalkerを
+;; 入れ子になったリストに作用するように変換していると
+;; 考えることができる
 
 
 (define (reverse-for-each proc lis)
