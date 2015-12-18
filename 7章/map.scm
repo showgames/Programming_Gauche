@@ -7,3 +7,15 @@
 (define (reverse-map proc lis)
   (map proc (reverse lis)))
 
+
+;; lambdaを使って書いてみる
+(define reverse-map
+  (lambda (proc lis)
+    (map proc (reverse lis))))
+
+;; 上記の関数でmap や for-eachを引数にして外から与える
+;; そうすると新たに作った手続きを返すことができる
+
+(define (reversed walker)
+  (lambda (proc lis)
+    (walker proc (reverse lis))))
