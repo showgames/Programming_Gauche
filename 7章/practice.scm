@@ -18,3 +18,11 @@
 
 (define (map-numbers proc lis)
   (map proc (filter number? lis)))
+
+
+;; for-each や map 等の手続きを受け取り、それを数値だけに
+;; 適用する手続きへと変換する手続き
+
+(define (numbers-only proc1)
+  (lambda (proc2 lis)
+    (proc1 proc2 (filter number? lis))))
